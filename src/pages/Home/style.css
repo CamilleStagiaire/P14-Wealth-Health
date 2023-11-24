@@ -1,0 +1,90 @@
+main {
+  background-color: rgba(90, 111, 8, 0.1);
+  flex: 1;
+}
+
+h1 {
+  color: #5a6f08;
+  margin: 0;
+  padding: 3rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 70%;
+  padding: 20px;
+}
+
+fieldset {
+  border: 1px solid #6f2a08;
+  padding: 0px;
+  margin: 0;
+}
+
+.address-fields {
+  padding: 10px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: column;
+  margin: auto;
+}
+
+.form-group-label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.form-group-label > *:first-child,
+.address-group > *:first-child {
+  flex: 1;
+}
+
+.form-group-label > *:last-child,
+.address-group > *:last-child {
+  flex: 2;
+}
+
+.save {
+  display: block;
+  width: 100px;
+  padding: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  border-color: #93ad18;
+  background-color: #5a6f08;
+  color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .form-group {
+    flex-direction: row;
+    gap: 50px;
+  }
+}
