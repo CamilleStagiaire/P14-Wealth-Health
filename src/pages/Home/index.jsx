@@ -1,12 +1,21 @@
+import React, { useState } from 'react';
 import "./style.css";
 import data from "../../data/data.json";
 import SelectField from "../../components/Form/SelectField";
 import InputField from "../../components/Form/InputField";
+import Modal from "../../components/Modal";
 
-function Home() {
-  const saveEmployee = (event) => {
-    event.preventDefault();
-  };
+  function Home() {
+    const [showModal, setShowModal] = useState(false);
+  
+    const saveEmployee = (event) => {
+      event.preventDefault();
+      setShowModal(true);
+    };
+  
+    const handleCloseModal = () => {
+      setShowModal(false);
+    };
 
   return (
     <main>
@@ -42,8 +51,9 @@ function Home() {
         </form>
 
         <button className="save" onClick={saveEmployee}>
-          Save
-        </button>
+        Save
+      </button>
+      {showModal && <Modal onClose={handleCloseModal} />}
       </div>
     </main>
   );

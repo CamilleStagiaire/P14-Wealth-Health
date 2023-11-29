@@ -17,7 +17,9 @@ npm install sass
 - mise en place du Header  
 
 **Conversion des plugins:**  
-- Menu déroulant: composant SelectField et fichier data.json  
+- Plugin de selection de date  
+- Menus déroulants: composant SelectField et fichier data.json  
+- Plugin de fenêtre modale : composant Modal
 
 **Tests de performance:**  
 - Extension pour Chrome Lighthouse
