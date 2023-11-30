@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from "react";
+import { FormContext } from "../../contexts/FormContext";
 import "./style.css";
-import data from "../../data/data.json";
 import SelectField from "../../components/Form/SelectField";
 import InputField from "../../components/Form/InputField";
 import Modal from "../../components/Modal";
 
-  function Home() {
-    const [showModal, setShowModal] = useState(false);
+function Home() {
+  const { saveEmployee } = useContext(FormContext);
   
-    const saveEmployee = (event) => {
-      event.preventDefault();
+  const [showModal, setShowModal] = useState(false);
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (saveEmployee()) {
       setShowModal(true);
-    };
-  
-    const handleCloseModal = () => {
-      setShowModal(false);
-    };
+    }
+  };
 
   return (
     <main>
@@ -23,13 +27,13 @@ import Modal from "../../components/Modal";
         <h1>Create Employee</h1>
         <form id="create-employee">
           <div className="form-group">
-            <InputField id="first-name" label="First Name" />
-            <InputField id="last-name" label="Last Name" />
+            <InputField id="firstName" label="First Name" />
+            <InputField id="lastName" label="Last Name" />
           </div>
 
           <div className="form-group">
-            <InputField id="date-of-birth" label="Date of Birth" type="date" />
-            <InputField id="start-date" label="Start Date" type="date" />
+            <InputField id="dateOfBirth" label="Date of Birth" type="date" />
+            <InputField id="startDate" label="Start Date" type="date" />
           </div>
 
           <div className="form-group">
@@ -38,22 +42,18 @@ import Modal from "../../components/Modal";
               <div className="address-fields">
                 <InputField id="street" label="Street" />
                 <InputField id="city" label="City" />
-                <SelectField id="state" label="State" options={data.states} />
-                <InputField id="zip-code" label="Zip Code" type="number" />
+                <SelectField id="state" label="State" />
+                <InputField id="zipCode" label="Zip Code" type="number" />
               </div>
             </fieldset>
-            <SelectField
-              id="department"
-              label="Department"
-              options={data.departments}
-            />
+            <SelectField id="department" label="Department" />
           </div>
         </form>
 
-        <button className="save" onClick={saveEmployee}>
-        Save
-      </button>
-      {showModal && <Modal onClose={handleCloseModal} />}
+        <button className="save" onClick={handleSubmit}>
+          Save
+        </button>
+        {showModal && <Modal onClose={handleCloseModal} />}
       </div>
     </main>
   );

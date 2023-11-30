@@ -88,3 +88,12 @@ input, select {
     gap: 50px;
   }
 }
+
+.error input{
+  border: 1px solid red;
+}
+
+.error input::placeholder {
+  color: red; 
+  opacity: 1; 
+}
