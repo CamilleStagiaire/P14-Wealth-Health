@@ -1,24 +1,24 @@
-.modal-background {
+.modal {
+  position: relative;
+  background-color: $bg-color;
+  padding: 20px;
+  border-radius: $border-radius;
+  text-align: center;
+  box-shadow: 0 0 10px #000;
+
+  &-background {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.75);
     display: flex;
     justify-content: center;
     align-items: center;
   }
-  
-  .modal {
-    position: relative;
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .modal-close {
+
+  &-close {
     position: absolute;
     top: 5px;
     right: 0;
@@ -26,4 +26,4 @@
     background: none;
     cursor: pointer;
   }
-  
+}

@@ -13,7 +13,7 @@ function Employees() {
       <h1>Current Employees</h1>
       <table className="container-layout">
         <thead>
-          <tr>
+          <tr className="list-header">
             {headers.map(header => (
               <th key={header}>{header.charAt(0).toUpperCase() + header.slice(1)}</th> 
             ))}

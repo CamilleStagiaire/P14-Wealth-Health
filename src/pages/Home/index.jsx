@@ -1,6 +1,5 @@
 import React, { useContext, useState } from "react";
 import { FormContext } from "../../contexts/FormContext";
-//import "./style.css";
 import SelectField from "../../components/Form/SelectField";
 import InputField from "../../components/Form/InputField";
 import Modal from "../../components/Modal";

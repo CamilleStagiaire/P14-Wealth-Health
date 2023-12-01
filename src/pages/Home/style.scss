@@ -1,0 +1,68 @@
+fieldset {
+    border: 1px solid $primary-color;
+    padding: 0;
+    margin: 0;
+}
+
+.address-fields {
+    padding: 10px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+}
+
+.form-group {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    margin: auto;
+
+    @media #{$large-up} {
+        flex-direction: row;
+        gap: 50px;
+    }
+}
+
+.form-group-label,
+.address-group {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    >*:first-child {
+        flex: 1;
+    }
+
+    >*:last-child {
+        flex: 2;
+    }
+}
+
+.save {
+    display: block;
+    width: 100px;
+    padding: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 2rem;
+    border-color: $secondary-color;
+    background-color: $primary-color;
+    color: white;
+}
+
+.error input {
+    border: 1px solid $error-color;
+
+    &::placeholder {
+        color: $error-color;
+        opacity: 1;
+    }
+}

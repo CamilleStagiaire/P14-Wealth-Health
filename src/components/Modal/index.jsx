@@ -1,4 +1,3 @@
-import "./style.css";
 import CloseIcon from "../../assets/close.svg";
 
 function Modal({ onClose }) {
