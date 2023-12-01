@@ -1,18 +1,16 @@
-import React, { useContext } from "react";
-import { FormContext } from "../../../contexts/FormContext";
+function InputField({ id, label, type = "text", value, onChange, error }) {
 
-function InputField({ id, label, type = "text" }) {
-  const { formData, updateFieldData, validationErrors } = useContext(FormContext);
+  const showError = error && !value.trim();
 
   return (
-    <div className={`form-group-label ${validationErrors[id] ? 'error' : ''}`}>
+    <div className={`form-group-label ${showError ? 'error' : ''}`}>
       <label htmlFor={id}>{label}</label>
       <input
         type={type}
         id={id}
-        value={formData[id]}
-        onChange={(e) => updateFieldData(id, e.target.value)}
-        placeholder={validationErrors[id] || ''}
+        value={value}
+        onChange={onChange}
+        placeholder={error || ''}
       />
     </div>
   );
