@@ -1,13 +1,17 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FormContext } from "../../contexts/FormContext";
 import SelectField from "../../components/Form/SelectField";
 import InputField from "../../components/Form/InputField";
 import Modal from "../../components/Modal";
 
 function Home() {
-  const { formData, updateFieldData } = useContext(FormContext);
+  const { formData, updateFieldData, addEmployee, resetFormData } =
+    useContext(FormContext);
   const [validationErrors, setValidationErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
+
+  const navigate = useNavigate();
 
   const validateForm = () => {
     const errors = {};
@@ -25,12 +29,16 @@ function Home() {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
-      console.log("Form Data:", formData);
+      addEmployee(formData);
       setShowModal(true);
     }
   };
 
-  const handleCloseModal = () => setShowModal(false);
+  const handleCloseModal = () => {
+    setShowModal(false);
+    resetFormData();
+    navigate("/employees");
+  };
 
   return (
     <main>

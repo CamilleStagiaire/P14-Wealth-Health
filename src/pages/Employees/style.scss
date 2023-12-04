@@ -1,4 +1,9 @@
 .list-header{
     display: flex;
-    justify-content: space-between;
+   
+}
+
+th, td {
+flex: 1;
+text-align: left;
 }
