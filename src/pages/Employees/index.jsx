@@ -1,17 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext } from "react";
+import { FormContext } from "../../contexts/FormContext";
 
 function Employees() {
-  const [localEmployees, setLocalEmployees] = useState([]);
+  const { employees, initialFormData } = useContext(FormContext);
 
-  useEffect(() => {
-    const storedEmployees = JSON.parse(localStorage.getItem('employees'));
-    if (storedEmployees) {
-      setLocalEmployees(storedEmployees);
-      console.log(localStorage.getItem('employees'));
-    }
-  }, []);
-
-  const headers = localEmployees.length > 0 ? Object.keys(localEmployees[0]) : [];
+  const data = Object.keys(initialFormData);
 
   return (
     <main className="employees">
@@ -20,16 +13,16 @@ function Employees() {
         <table className="container-layout">
           <thead>
             <tr className="list-header">
-              {headers.map(header => (
-                <th key={header}>{header.charAt(0).toUpperCase() + header.slice(1)}</th> 
+              {data.map(data => (
+                <th key={data}>{data.charAt(0).toUpperCase() + data.slice(1)}</th> 
               ))}
             </tr>
           </thead>
           <tbody>
-            {localEmployees.map((employee, index) => (
-              <tr key={index} className="list-header">
-                {headers.map(header => (
-                  <td key={header}>{employee[header]}</td>
+            {employees.map((employee, index) => (
+              <tr key={index} className="list-body">
+                {data.map(data => (
+                  <td key={data}>{employee[data]}</td>
                 ))}
               </tr>
             ))}
