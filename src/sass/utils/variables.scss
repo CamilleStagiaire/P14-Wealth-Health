@@ -1,7 +1,11 @@
 // les couleurs
 $primary-color: #5a6f08;
 $secondary-color: #93ad18;
+$color-thead: #f8f9fa;
+$color-border: #dee2e6;
 $header-bg-color: rgba(90, 111, 8, 0.9);
+$main-bg-color: rgba(90, 111, 8, 0.1);
+
 $bg-color: white;
 $error-color: red;
 
@@ -17,3 +21,4 @@ $large: 1024px;
 $small-up: "only screen and (min-width: #{$small})";
 $small-down: "only screen and (max-width: #{$small})";
 $large-up: "only screen and (min-width: #{$large})";
+$large-down: "only screen and (max-width: #{$large})";

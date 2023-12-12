@@ -15,6 +15,7 @@ npm install sass
 **Conversion du projet HRNet:**    
 - création des pages Home et Employees  
 - mise en place du Header  
+- mise en place du contexte et du localStorage  
 
 **Conversion des plugins:**  
 - Plugin de selection de date  
@@ -23,7 +24,6 @@ npm install sass
 
 **Tests de performance:**  
 - Extension pour Chrome Lighthouse
-
 
 # Compétences évaluées:
 - Analyser la performance d'une application web  

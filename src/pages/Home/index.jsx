@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import { FormContext } from "../../contexts/FormContext";
 import SelectField from "../../components/Form/SelectField";
 import InputField from "../../components/Form/InputField";
@@ -11,7 +11,7 @@ function Home() {
   const [validationErrors, setValidationErrors] = useState({});
   const [showModal, setShowModal] = useState(false);
 
-  const navigate = useNavigate();
+ // const navigate = useNavigate();
 
   const validateForm = () => {
     const errors = {};
@@ -37,7 +37,7 @@ function Home() {
   const handleCloseModal = () => {
     setShowModal(false);
     resetFormData();
-    navigate("/employees");
+   // navigate("/employees");
   };
 
   return (

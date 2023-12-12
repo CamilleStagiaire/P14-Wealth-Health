@@ -2,27 +2,62 @@ import React, { useContext } from "react";
 import { FormContext } from "../../contexts/FormContext";
 
 function Employees() {
-  const { employees, initialFormData } = useContext(FormContext);
+  const { employees, initialFormData, states } = useContext(FormContext);
 
-  const data = Object.keys(initialFormData);
+  const dataMapping = {
+    firstName: "First Name",
+    lastName: "Last Name",
+    dateOfBirth: "Date of Birth",
+    startDate: "Start Date",
+    street: "Street",
+    city: "City",
+    state: "State",
+    zipCode: "Zip Code",
+    department: "Department",
+  };
+
+  const formatDate = (dateStr) => {
+    const date = new Date(dateStr);
+    const day = date.getDate();
+    const month = date.getMonth() + 1;
+    const year = date.getFullYear();
+  
+    const formatDay = day < 10 ? `0${day}` : day;
+    const formatMonth = month < 10 ? `0${month}` : month;
+  
+    return `${formatDay}/${formatMonth}/${year}`;
+  };
+
+  const getStateAbbreviation = (stateName) => {
+    const state = states.find(d => d.name === stateName);
+    return state ? state.abbreviation : stateName;
+  };
+
+  const dataKeys = Object.keys(initialFormData);
 
   return (
     <main className="employees">
       <div className="container">
         <h1>Current Employees</h1>
-        <table className="container-layout">
+        <table className="container-layout table">
           <thead>
             <tr className="list-header">
-              {data.map(data => (
-                <th key={data}>{data.charAt(0).toUpperCase() + data.slice(1)}</th> 
+              {dataKeys.map(key => (
+                <th key={key}>{dataMapping[key]}</th>
               ))}
             </tr>
           </thead>
           <tbody>
             {employees.map((employee, index) => (
-              <tr key={index} className="list-body">
-                {data.map(data => (
-                  <td key={data}>{employee[data]}</td>
+              <tr key={index} className="list-body"  >
+                {dataKeys.map(key => (
+                  <td key={key}>
+                    {key === "dateOfBirth" || key === "startDate"
+                      ? formatDate(employee[key])
+                      : key === "state"
+                      ? getStateAbbreviation(employee[key])
+                      : employee[key]}
+                  </td>
                 ))}
               </tr>
             ))}

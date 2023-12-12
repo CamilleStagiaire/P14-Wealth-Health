@@ -27,7 +27,7 @@ code {
 }
 
 main {
-    background-color: rgba(90, 111, 8, 0.1);
+    background-color: $main-bg-color;
     flex: 1;
 }
 
