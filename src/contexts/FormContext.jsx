@@ -26,6 +26,18 @@ export const FormProvider = ({ children }) => {
     }
   }, []);
 
+  const dataMapping = {
+    firstName: "First Name",
+    lastName: "Last Name",
+    dateOfBirth: "Date of Birth",
+    startDate: "Start Date",
+    street: "Street",
+    city: "City",
+    state: "State",
+    zipCode: "Zip Code",
+    department: "Department",
+  };
+
   const addEmployee = (newEmployee) => {
     const updatedEmployees = [...employees, newEmployee];
     setEmployees(updatedEmployees);
@@ -43,6 +55,7 @@ export const FormProvider = ({ children }) => {
   return (
     <FormContext.Provider value={{
       formData,
+      dataMapping,
       initialFormData,
       updateFieldData,
       resetFormData,

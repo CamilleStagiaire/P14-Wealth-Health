@@ -18,9 +18,10 @@ npm install sass
 - mise en place du contexte et du localStorage  
 
 **Conversion des plugins:**  
-- Plugin de selection de date  
+- DatePicker natif HTML5 input type="date" et composant InputField
 - Menus déroulants: composant SelectField et fichier data.json  
-- Plugin de fenêtre modale : composant Modal
+- Fenêtre modale : composant Modal
+- Plugin table-plugin
 
 **Tests de performance:**  
 - Extension pour Chrome Lighthouse

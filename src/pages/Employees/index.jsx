@@ -2,19 +2,7 @@ import React, { useContext } from "react";
 import { FormContext } from "../../contexts/FormContext";
 
 function Employees() {
-  const { employees, initialFormData, states } = useContext(FormContext);
-
-  const dataMapping = {
-    firstName: "First Name",
-    lastName: "Last Name",
-    dateOfBirth: "Date of Birth",
-    startDate: "Start Date",
-    street: "Street",
-    city: "City",
-    state: "State",
-    zipCode: "Zip Code",
-    department: "Department",
-  };
+  const { employees, initialFormData, states, dataMapping } = useContext(FormContext);
 
   const formatDate = (dateStr) => {
     const date = new Date(dateStr);
