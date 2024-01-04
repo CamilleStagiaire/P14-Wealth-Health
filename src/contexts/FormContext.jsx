@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import data from "../data/data.json";
+import { apiService } from "../services/apiService";
 
 export const FormContext = createContext();
 
@@ -18,15 +19,13 @@ const initialFormData = {
 export const FormProvider = ({ children }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [employees, setEmployees] = useState([]);
-  console.log(employees);
 
   useEffect(() => {
-    const storedEmployees = JSON.parse(localStorage.getItem('employees'));
-    if (storedEmployees) {
-      setEmployees(storedEmployees);
-    }
+    apiService.fetchEmployees()
+      .then(data => setEmployees(data))
+      .catch(error => console.error('Fetching employees failed', error));
   }, []);
-
+  
   const dataMapping = {
     firstName: "First Name",
     lastName: "Last Name",
@@ -40,11 +39,15 @@ export const FormProvider = ({ children }) => {
   };
 
   const addEmployee = (newEmployee) => {
-    const updatedEmployees = [...employees, newEmployee];
-    setEmployees(updatedEmployees);
-    localStorage.setItem('employees', JSON.stringify(updatedEmployees));
+    apiService.addEmployee(newEmployee)
+      .then(addedEmployee => {
+        setEmployees(prevEmployees => [...prevEmployees, addedEmployee]);
+      })
+      .catch(error => {
+        console.error('Adding employee failed', error);
+      });
   };
-
+  
   const updateFieldData = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };

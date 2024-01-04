@@ -23,6 +23,10 @@ npm install sass
 - Fenêtre modale : composant Modal
 - Plugin table-plugin-openclassrooms: https://github.com/CamilleStagiaire/P14-table-plugin.git
 
+**système de gestion des employés:** 
+- https://github.com/CamilleStagiaire/P14-back-end.git  
+- fichier apiService.js  
+
 **Tests de performance:**  
 - Extension pour Chrome Lighthouse
 

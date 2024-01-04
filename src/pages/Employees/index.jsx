@@ -18,8 +18,6 @@ function Employees() {
       };
     });
 
-    console.log(formattedEmployees);
-
   return (
     <main className="employees">
       <div className="container">
