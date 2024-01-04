@@ -1,16 +1,16 @@
 function InputField({ id, label, type = "text", value, onChange, error }) {
-
   const showError = error && !value.trim();
 
   return (
-    <div className={`form-group-label ${showError ? 'error' : ''}`}>
+    <div className={`form-group-label ${showError ? "error" : ""}`}>
       <label htmlFor={id}>{label}</label>
       <input
+        className="inputSelect"
         type={type}
         id={id}
         value={value}
         onChange={onChange}
-        placeholder={error || ''}
+        placeholder={error || ""}
       />
     </div>
   );

@@ -4,12 +4,15 @@ fieldset {
     margin: 0;
 }
 
+form {
+    padding: 20px; 
+}
+
 .address-fields {
     padding: 10px;
 }
 
-input,
-select {
+.inputSelect {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
@@ -54,7 +57,7 @@ select {
     font-weight: bold;
     margin-top: 2rem;
     border-color: $secondary-color;
-    background-color: $primary-color;
+    background-color: $header-bg-color;
     color: white;
 }
 

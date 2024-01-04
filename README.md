@@ -21,7 +21,7 @@ npm install sass
 - DatePicker natif HTML5 input type="date" et composant InputField
 - Menus déroulants: composant SelectField et fichier data.json  
 - Fenêtre modale : composant Modal
-- Plugin table-plugin
+- Plugin table-plugin-openclassrooms: https://github.com/CamilleStagiaire/P14-table-plugin.git
 
 **Tests de performance:**  
 - Extension pour Chrome Lighthouse

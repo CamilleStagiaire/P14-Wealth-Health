@@ -8,7 +8,7 @@ function SelectField({ id, label }) {
   return (
     <div className="form-group-label">
       <label htmlFor={id}>{label}</label>
-      <select id={id} value={formData[id]} onChange={(e) => updateFieldData(id, e.target.value)}>
+      <select className="inputSelect" id={id} value={formData[id]} onChange={(e) => updateFieldData(id, e.target.value)}>
         {options.map(option => (
           <option key={option.abbreviation} value={option.name}>{option.name}</option>
         ))}

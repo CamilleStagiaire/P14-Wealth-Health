@@ -18,6 +18,7 @@ const initialFormData = {
 export const FormProvider = ({ children }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [employees, setEmployees] = useState([]);
+  console.log(employees);
 
   useEffect(() => {
     const storedEmployees = JSON.parse(localStorage.getItem('employees'));
