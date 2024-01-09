@@ -29,13 +29,13 @@ export const FormProvider = ({ children }) => {
   const dataMapping = {
     firstName: "First Name",
     lastName: "Last Name",
-    dateOfBirth: "Date of Birth",
     startDate: "Start Date",
+    department: "Department",
+    dateOfBirth: "Date of Birth",
     street: "Street",
     city: "City",
     state: "State",
     zipCode: "Zip Code",
-    department: "Department",
   };
 
   const addEmployee = (newEmployee) => {

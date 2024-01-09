@@ -2,6 +2,7 @@ class Employee {
   constructor(employeeData, states) {
     this.data = employeeData;
     this.states = states;
+    this.data = this.cleanData(employeeData);
   }
 
   formatDate(dateStr) {
@@ -20,6 +21,18 @@ class Employee {
     return state ? state.abbreviation : stateName;
   }
 
+  cleanData(data) {
+    const cleanedData = {};
+    Object.keys(data).forEach(key => {
+      if (typeof data[key] === 'string') {
+        cleanedData[key] = data[key].replace(/,/g, '');
+      } else {
+        cleanedData[key] = data[key];
+      }
+    });
+    return cleanedData;
+  }
+
   getFormattedData(key) {
     switch (key) {
       case "dateOfBirth":
@@ -30,7 +43,7 @@ class Employee {
         const stateAbbreviation = this.getStateAbbreviation(this.data[key]);
         return stateAbbreviation;
       default:
-        return this.data[key];
+        return this.cleanData({[key]: this.data[key]})[key];
     }
   }
 }

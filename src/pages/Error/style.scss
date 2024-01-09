@@ -1,0 +1,21 @@
+.error {
+    text-align: center;
+
+    &_404 {
+        font-size: 60px;
+    }
+
+    &_text {
+        font-size: 24px;
+    }
+
+    &_link {
+        font-size: 18px;
+        text-decoration: none;
+        color: $primary-color;
+
+        &:hover {
+            font-weight: bold;
+        }
+    }
+}

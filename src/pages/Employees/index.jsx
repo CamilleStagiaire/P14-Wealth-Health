@@ -14,7 +14,8 @@ function Employees() {
         ...emp,
         dateOfBirth: employeeInstance.getFormattedData("dateOfBirth"),
         startDate: employeeInstance.getFormattedData("startDate"),
-        state: employeeInstance.getFormattedData("state")
+        state: employeeInstance.getFormattedData("state"),
+        street: employeeInstance.getFormattedData("street")
       };
     });
 

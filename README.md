@@ -1,6 +1,6 @@
 # Wealth Health
 
-# Faites passer une librairie jQuery vers React - Projet 14
+# Faites passer une librairie jQuery vers React - Projet 14  
 https://github.com/CamilleStagiaire/P14-Wealth-Health.git
 
 *Formation Développeur d'application - JavaScript React*
@@ -15,7 +15,7 @@ npm install sass
 **Conversion du projet HRNet:**    
 - création des pages Home et Employees  
 - mise en place du Header  
-- mise en place du contexte et du localStorage  
+- mise en place du contexte  
 
 **Conversion des plugins:**  
 - DatePicker natif HTML5 input type="date" et composant InputField
@@ -28,6 +28,9 @@ npm install sass
 - fichier apiService.js  
 
 **Tests de performance:**  
+- npm install -g serve  
+- npm run build  
+- serve -s build  
 - Extension pour Chrome Lighthouse
 
 # Compétences évaluées:
