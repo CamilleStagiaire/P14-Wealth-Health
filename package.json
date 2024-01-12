@@ -11,13 +11,13 @@
     "react-router-dom": "^6.20.0",
     "react-scripts": "5.0.1",
     "sass": "^1.69.5",
-    "table-plugin-openclassrooms": "^0.1.14",
+    "table-plugin-openclassrooms": "^0.1.15",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

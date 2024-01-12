@@ -18,8 +18,7 @@ function Home() {
     for (const key in formData) {
       if (!formData[key].trim()) {
         const fieldName = dataMapping[key] || key;
-      errors[key] = `${fieldName} is required`;
-   
+        errors[key] = `${fieldName} is required`;
       }
     }
     setValidationErrors(errors);
