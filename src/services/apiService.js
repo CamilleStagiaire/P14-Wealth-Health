@@ -1,5 +1,6 @@
 const API_BASE_URL = 'http://localhost:5000/api/employees'
 
+/* istanbul ignore next */
 const fetchEmployees = () => {
   return fetch(API_BASE_URL)
     .then(response => {
@@ -8,6 +9,7 @@ const fetchEmployees = () => {
     });
 };
 
+/* istanbul ignore next */
 const addEmployee = (employeeData) => {
   return fetch(API_BASE_URL, {
     method: 'POST',

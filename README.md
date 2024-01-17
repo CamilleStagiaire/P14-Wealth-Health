@@ -1,37 +1,29 @@
-# Wealth Health
+# Wealth Health - HRnet
 
 # Faites passer une librairie jQuery vers React - Projet 14  
-https://github.com/CamilleStagiaire/P14-Wealth-Health.git
-
+https://github.com/CamilleStagiaire/P14-Wealth-Health.git  
 *Formation Développeur d'application - JavaScript React*
 
-# Etapes
-**installation et lancement du projet:**  
-- Front-end:  
-npx create-react-app wealth-wealth  
-npm install react-router-dom  
-npm install sass  
+## Description:
+HRnet est une application web interne qui gère les dossiers des employés de WealthHealth  
 
-**Conversion du projet HRNet:**    
-- création des pages Home et Employees  
-- mise en place du Header  
-- mise en place du contexte  
+## Prerequis:
+- [Node.js](https://nodejs.org/en/) > v16  
+- [VS Code](https://code.visualstudio.com/) éditeur de texte recommandé   
+- Un terminal bash ex : [git Bash]  
 
-**Conversion des plugins:**  
-- DatePicker natif HTML5 input type="date" et composant InputField
-- Menus déroulants: composant SelectField et fichier data.json  
-- Fenêtre modale : composant Modal
-- Plugin table-plugin-openclassrooms: https://github.com/CamilleStagiaire/P14-table-plugin.git
+## Installation
 
-**système de gestion des employés:** 
-- https://github.com/CamilleStagiaire/P14-back-end.git  
-- fichier apiService.js  
+### back-end: 
+- Forker / cloner le repo https://github.com/CamilleStagiaire/P14-back-end.git  
+- npm install  
+- npm run hrnet-db  
+- npm start  
 
-**Tests de performance:**  
-- npm install -g serve  
-- npm run build  
-- serve -s build  
-- Extension pour Chrome Lighthouse
+### front-end 
+- Forker / cloner le repo https://github.com/CamilleStagiaire/P14-Wealth-Health.git  
+- npm install  
+- npm start  
 
 # Compétences évaluées:
 - Analyser la performance d'une application web  
