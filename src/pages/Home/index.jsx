@@ -5,6 +5,10 @@ import SelectField from "../../components/Form/SelectField";
 import InputField from "../../components/Form/InputField";
 import Modal from "../../components/Modal";
 
+/**
+ * Composant page d'accueil
+ * @returns {React.Element}
+ */
 function Home() {
   const { formData, updateFieldData, addEmployee, resetFormData, dataMapping } =
     useContext(FormContext);
@@ -13,6 +17,10 @@ function Home() {
 
   const navigate = useNavigate();
 
+  /**
+   * Valide le formulaire et définit les erreurs de validation.
+   * @returns {boolean}
+   */
   const validateForm = () => {
     const errors = {};
     for (const key in formData) {
@@ -25,6 +33,10 @@ function Home() {
     return Object.keys(errors).length === 0;
   };
 
+  /**
+   * Gère la soumission du formulaire.
+   * @param {Event} event
+   */
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validateForm()) {
@@ -33,6 +45,7 @@ function Home() {
     }
   };
 
+  //Gère la fermeture de la modale et réinitialise le formulaire
   const handleCloseModal = () => {
     setShowModal(false);
     resetFormData();

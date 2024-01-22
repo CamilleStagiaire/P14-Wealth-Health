@@ -16,6 +16,11 @@ const initialFormData = {
   zipCode: "",
 };
 
+/**
+ * Provider des données
+ * @param {React.ReactNode} props.children
+ * @returns {React.Element}
+ */
 export const FormProvider = ({ children }) => {
   const [formData, setFormData] = useState(initialFormData);
   const [employees, setEmployees] = useState([]);
@@ -38,6 +43,10 @@ export const FormProvider = ({ children }) => {
     zipCode: "Zip Code",
   };
 
+  /**
+   * Ajoute un nouvel employé et met à jour la liste des employés.
+   * @param {Object} newEmployee
+   */
   const addEmployee = (newEmployee) => {
     apiService.addEmployee(newEmployee)
       .then(addedEmployee => {
@@ -48,10 +57,16 @@ export const FormProvider = ({ children }) => {
       });
   };
   
+   /**
+   * Met à jour les données des champs du formulaire.
+   * @param {string} field
+   * @param {string} value
+   */
   const updateFieldData = (field, value) => {
     setFormData({ ...formData, [field]: value });
   };
 
+  //Réinitialise les données du formulaire à leur état initial
   const resetFormData = () => {
     setFormData(initialFormData);
   };

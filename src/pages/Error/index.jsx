@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
 
+/**
+ * Composant page Error
+ * @returns {React.Element}
+ */
 function Error() {
 	return (
 		<main className="error">

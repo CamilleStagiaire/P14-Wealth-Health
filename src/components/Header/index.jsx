@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/logo.jpg";
 import menuIcon from "../../assets/menu.svg";
 
+/**
+ * Composant Header
+ * @returns {React.Element}
+ */
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 

@@ -1,10 +1,20 @@
 class Employee {
+  /**
+   * Crée une instance de Employee.
+   * @param {Object} employeeData
+   * @param {Object[]} states
+   */
   constructor(employeeData, states) {
     this.data = employeeData;
     this.states = states;
     this.data = this.cleanData(employeeData);
   }
 
+  /**
+   * Formate les dates en format DD/MM/YYYY.
+   * @param {string} dateStr
+   * @returns {string}
+   */
   formatDate(dateStr) {
     const date = new Date(dateStr);
     const day = date.getDate();
@@ -16,11 +26,21 @@ class Employee {
     return formattedDate;
   }
 
+  /**
+   * Récupère l'abréviation d'un état à partir de son nom.
+   * @param {string} stateName
+   * @returns {string}
+   */
   getStateAbbreviation(stateName) {
     const state = this.states.find((d) => d.name === stateName);
     return state ? state.abbreviation : stateName;
   }
 
+  /**
+   * Supprime les virgules.
+   * @param {Object} data
+   * @returns {Object}
+   */
   cleanData(data) {
     const cleanedData = {};
     Object.keys(data).forEach(key => {
@@ -33,6 +53,11 @@ class Employee {
     return cleanedData;
   }
 
+  /**
+   * Récupère les données formatées en fonction de la clé.
+   * @param {string} key
+   * @returns {string}
+   */
   getFormattedData(key) {
     switch (key) {
       case "dateOfBirth":

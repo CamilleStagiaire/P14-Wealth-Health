@@ -5,9 +5,14 @@ import Employee from "../../models/Employee";
 
 const primaryColor = "#5a6f08";
 
+/**
+ * Composant page employees
+ * @returns {React.Element}
+ */
 function Employees() {
   const { employees, states, dataMapping } = useContext(FormContext);
 
+    //Formate les données des employés pour l'affichage.
     const formattedEmployees = employees.map(emp => {
       const employeeInstance = new Employee(emp, states);
       return {
