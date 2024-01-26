@@ -17,7 +17,6 @@ HRnet est une application web interne qui gère les dossiers des employés de We
 ### back-end: 
 - Forker / cloner le repo https://github.com/CamilleStagiaire/P14-back-end.git  
 - npm install  
-- npm run hrnet-db  
 - npm start  
 
 ### front-end 
